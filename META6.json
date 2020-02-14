@@ -2,7 +2,7 @@
     "perl" : "6.*",
     "name" : "Math::Trig",
     "license" : "Artistic-2.0",
-    "version" : "0.0.3",
+    "version" : "0.3.1",
     "api" : "1",
     "auth"   : "github:tbrowder",
     "description" : "Useful trigonometric routines",
