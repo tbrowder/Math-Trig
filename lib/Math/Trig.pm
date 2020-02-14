@@ -1,6 +1,6 @@
-unit module Math::Trig:ver<0.02>;
+unit module Math::Trig;
 
-sub rad2rad ($rad)  is export 
+sub rad2rad ($rad) is export
 {
     $rad % tau;
 }
@@ -10,7 +10,7 @@ sub deg2deg ($deg) is export
     $deg % 360;
 }
 
-sub grad2grad ($grad) is export 
+sub grad2grad ($grad) is export
 {
     $grad % 400;
 }
@@ -40,7 +40,7 @@ sub rad2grad ($rad) is export
     400 / tau * $rad;
 }
 
-sub grad2rad ($grad) is export 
+sub grad2rad ($grad) is export
 {
     tau / 400 * $grad;
 }
@@ -91,7 +91,7 @@ sub great-circle-direction($theta0, $phi0, $theta1, $phi1) is export(:great-circ
 {
     my $lat0 = pi/2 - $phi0;
     my $lat1 = pi/2 - $phi1;
- 
+
     rad2rad(2 * pi -
         atan2(sin($theta0-$theta1) * cos($lat1),
                 cos($lat0) * sin($lat1) -
@@ -103,26 +103,26 @@ our &great-circle-bearing is export(:great-circle) = &great-circle-direction;
 sub great-circle-waypoint($theta0, $phi0, $theta1, $phi1, $point = 0.5) is export(:great-circle)
 {
     my $d = great-circle-distance( $theta0, $phi0, $theta1, $phi1 );
- 
+
     return if $d == pi;
- 
+
     my $sd = sin($d);
- 
+
     return ($theta0, $phi0) if $sd == 0;
- 
+
     my $A = sin((1 - $point) * $d) / $sd;
     my $B = sin(     $point  * $d) / $sd;
- 
+
     my $lat0 = pi/2 - $phi0;
     my $lat1 = pi/2 - $phi1;
- 
+
     my $x = $A * cos($lat0) * cos($theta0) + $B * cos($lat1) * cos($theta1);
     my $y = $A * cos($lat0) * sin($theta0) + $B * cos($lat1) * sin($theta1);
     my $z = $A * sin($lat0)                + $B * sin($lat1);
- 
+
     my $theta = atan2($y, $x);
     my $phi   = acos($z);
- 
+
     ($theta, $phi);
 }
 
@@ -131,16 +131,47 @@ our &great-circle-midpoint is export(:great-circle) = &great-circle-waypoint.ass
 sub great-circle-destination( $theta0, $phi0, $dir0, $dst ) is export(:great-circle)
 {
     my $lat0 = pi/2 - $phi0;
- 
+
     my $phi1   = asin(sin($lat0)*cos($dst) +
                       cos($lat0)*sin($dst)*cos($dir0));
- 
+
     my $theta1 = $theta0 + atan2(sin($dir0)*sin($dst)*cos($lat0),
                                  cos($dst)-sin($lat0)*sin($phi1));
- 
+
     my $dir1 = great-circle-bearing($theta1, $phi1, $theta0, $phi0) + pi;
- 
+
     $dir1 -= 2*pi if $dir1 > 2*pi;
- 
+
     ($theta1, $phi1, $dir1);
+}
+
+# Trigonemetric functions with arguments in degrees:
+#   rad = deg × π / 180°
+#   deg = rad × 180° / π
+constant $deg2rad is export(:deg2rad :TRIG :ALL) = pi / 180.0;
+constant $rad2deg is export(:rad2deg :TRIG :ALL) = 180.0 / pi;
+
+# arguments in degrees
+sub sind($degrees) is export(:sind :TRIG :ALL) {
+    return sin $degrees * $deg2rad;
+}
+sub cosd($degrees) is export(:cosd :TRIG :ALL) {
+    return cos $degrees * $deg2rad;
+}
+sub tand($degrees) is export(:tand :TRIG :ALL) {
+    return tan $degrees * $deg2rad;
+}
+
+# return results in degrees
+sub asind($x) is export(:asind :TRIG :ALL) {
+    return $rad2deg * asin $x;
+}
+sub acosd($x) is export(:acosd :TRIG :ALL) {
+    return $rad2deg * acos $x;
+}
+sub atand($x) is export(:atand :TRIG :ALL) {
+    return $rad2deg * atan $x;
+}
+sub atan2d($y, $x) is export(:atan2d :TRIG :ALL) {
+    return $rad2deg * atan2 $y, $x;
 }

@@ -2,11 +2,19 @@
     "perl" : "6.*",
     "name" : "Math::Trig",
     "license" : "Artistic-2.0",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
+    "api" : "1",
+    "auth"   : "github:tbrowder",
     "description" : "Useful trigonometric routines",
-    "author" : "Jonathan Scott Duff <duff@pobox.com>",
+    "authors" : [
+        "Tom Browder <tom.browder@gmail.com> [since 2020-02-14]",
+        "Jonathan Scott Duff <duff@pobox.com> [deceased]"
+    ],
+    "support"     : {
+        "bugtracker" : "https://github.com/tbrowder/Math-Trig-Raku/issues"
+    },
     "repo-type": "git",
-    "source-url" : "git://github.com/perlpilot/p6-Math-Trig.git",
+    "source-url" : "https:://github.com/tbrowder/Math-Trig-Raku.git",
     "depends" : [ ],
     "build-depends" : [ ],
     "test-depends" : [ "Test" ],
