@@ -19,6 +19,6 @@
     "build-depends" : [ ],
     "test-depends" : [ "Test" ],
     "provides" : {
-      "Math::Trig" : "lib/Math/Trig.pm"
+      "Math::Trig" : "lib/Math/Trig.rakumod"
     }
 }
