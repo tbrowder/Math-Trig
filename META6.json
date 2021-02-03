@@ -11,10 +11,10 @@
         "Jonathan Scott Duff <duff@pobox.com> [deceased]"
     ],
     "support"     : {
-        "bugtracker" : "https://github.com/tbrowder/Math-Trig-Raku/issues"
+        "bugtracker" : "https://github.com/tbrowder/Math-Trig/issues"
     },
     "repo-type": "git",
-    "source-url" : "https:://github.com/tbrowder/Math-Trig-Raku.git",
+    "source-url" : "https://github.com/tbrowder/Math-Trig.git",
     "depends" : [ ],
     "build-depends" : [ ],
     "test-depends" : [
