@@ -1,27 +1,33 @@
 {
-    "perl" : "6.*",
-    "name" : "Math::Trig",
-    "license" : "Artistic-2.0",
-    "version" : "0.3.1",
-    "api" : "1",
-    "auth"   : "github:tbrowder",
-    "description" : "Useful trigonometric routines",
-    "authors" : [
-        "Tom Browder <tom.browder@gmail.com> [since 2020-02-14]",
-        "Jonathan Scott Duff <duff@pobox.com> [deceased]"
-    ],
-    "support"     : {
-        "bugtracker" : "https://github.com/tbrowder/Math-Trig/issues"
-    },
-    "repo-type": "git",
-    "source-url" : "https://github.com/tbrowder/Math-Trig.git",
-    "depends" : [ ],
-    "build-depends" : [ ],
-    "test-depends" : [
-        "Test",
-        "Test::META"
-    ],
-    "provides" : {
-      "Math::Trig" : "lib/Math/Trig.rakumod"
-    }
+  "api": "1",
+  "auth": "github:tbrowder",
+  "authors": [
+    "Tom Browder <tom.browder@gmail.com> [since 2020-02-14]",
+    "Jonathan Scott Duff <duff@pobox.com> [deceased]"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Useful trigonometric routines",
+  "license": "Artistic-2.0",
+  "name": "Math::Trig",
+  "perl": "6.*",
+  "provides": {
+    "Math::Trig": "lib/Math/Trig.rakumod"
+  },
+  "repo-type": "git",
+  "resources": [
+  ],
+  "source-url": "https://github.com/tbrowder/Math-Trig.git",
+  "support": {
+    "bugtracker": "https://github.com/tbrowder/Math-Trig/issues"
+  },
+  "tags": [
+  ],
+  "test-depends": [
+    "Test",
+    "Test::META"
+  ],
+  "version": "0.3.1"
 }
