@@ -1,4 +1,4 @@
-unit module Math::Trig:auth<tbrowder:CPAN>;
+unit module Math::Trig:auth<tbrowder:CPAN>:ver<0.5.0>;
 
 sub rad2rad ($rad) is export
 {
