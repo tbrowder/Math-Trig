@@ -1,0 +1,64 @@
+=begin pod
+
+=head1 Math::Trig
+
+Provides subroutines for coverting between degrees, radians, and gradians;
+converting between different coordinate systems (cartesian, spherical,
+cylindrical); and great circle formulas.
+
+Also provides versions of the common trigonemetric functions that take
+or return their arguments in degrees:
+
+=begin code
+sind
+cosd
+tand
+asind
+acosd
+atand
+atan2d
+=end code
+
+=head2 SYNOPSIS
+
+=begin code
+use Math::Trig;      # no trigonometric functions exported
+use Math::Trig :ALL; # includes the trig functions
+=end code
+
+
+=head2 INSTALLATION
+
+=begin code
+zef install Math::Trig
+=end code
+
+=head2 BUGS
+
+=item This is a work in progress.  Caveat emptor.
+
+=head2 AUTHORS
+
+=item Tom Browder (tbrowder@cpan.org) [from 2020-02-14]
+
+=item Original author: the late Jonathan Scott Duff <@perlpilot>, RIP
+
+=head2 LICENSE
+
+Artistic 2.0. See that license [here](./LICENSE).
+
+=head2 COPYRIGHT
+
+This software is Copyright (c) 2021 by Tom Browder.
+
+This software is Copyright (c) 2015 by Jonathan Scott Duff.
+
+
+=head2 ACKNOWLEDGEMENTS
+
+Jonathan Duff's words: "This module is shamelessly based on the
+[Perl 5 module](https://metacpan.org/pod/Math::Trig) of the same name.
+Without the authors and maintainers of *that* module, this module
+wouldn't exist in this form."
+
+=end pod
