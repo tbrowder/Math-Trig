@@ -1,6 +1,6 @@
 {
   "api": "1",
-  "auth": "github:tbrowder",
+  "auth": "tbrowder:CPAN",
   "authors": [
     "Tom Browder <tom.browder@gmail.com> [since 2020-02-14]",
     "Jonathan Scott Duff <duff@pobox.com> [deceased]"
